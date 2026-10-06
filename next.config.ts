@@ -1,14 +1,20 @@
 import type { NextConfig } from "next";
 
 import { isPublicSupabaseKey } from "./lib/supabase/key-validation";
+
 const publicKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
+
 if (publicKey && !isPublicSupabaseKey(publicKey)) {
   throw new Error(
     "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY debe ser una clave pública publishable o anon. Nunca uses una secret/service_role aquí.",
   );
 }
+
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+
+  allowedDevOrigins: ["192.168.1.75"],
+
   async headers() {
     return [
       {
