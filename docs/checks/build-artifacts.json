@@ -1,0 +1,25 @@
+{
+  "compiled_routes": 26,
+  "critical_routes_checked": 13,
+  "missing_routes": [],
+  "css_motion_rules": [],
+  "private_secret_symbols_in_browser_chunks": [],
+  "original_migrations": [
+    {
+      "migration": "202610030001_cotiza_smart.sql",
+      "identical": true
+    },
+    {
+      "migration": "202610030002_business_logos.sql",
+      "identical": true
+    },
+    {
+      "migration": "202610030003_templates_notifications.sql",
+      "identical": true
+    },
+    {
+      "migration": "202610030004_duplicate_quotes.sql",
+      "identical": true
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+.status-badge {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  font-size: 11px;
+  padding: 6px 9px;
+  border-radius: 5px;
+  white-space: nowrap;
+  background: #edf1f5;
+  color: #637888;
+}
+.status-badge svg {
+  flex-shrink: 0;
+}
+.status-sent {
+  color: #275a94;
+  background: #eaf2fc;
+}
+.status-viewed {
+  color: #77528d;
+  background: #f2edf7;
+}
+.status-accepted {
+  color: #17664f;
+  background: #e5f4ec;
+}
+.status-rejected {
+  color: #a14554;
+  background: #fceef1;
+}
+.status-expired {
+  color: #8b641c;
+  background: #fbf2df;
+}

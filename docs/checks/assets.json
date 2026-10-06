@@ -1,0 +1,27 @@
+[
+  {
+    "path": "public/images/mascot/benefits.png",
+    "provided_asset": "benefits-background(3).png",
+    "sha256": "9fc833b95eda0ba3ef09fbcb8b41d877deacc6dfa5d2b04a0b68561ef9b52648"
+  },
+  {
+    "path": "public/images/mascot/catalog.png",
+    "provided_asset": "image(20261004-125252).png",
+    "sha256": "224974d05b14afe1972b85418c60db8702e9ac42cd60b198c02dbf0fafb7c0d7"
+  },
+  {
+    "path": "public/images/mascot/hero.png",
+    "provided_asset": "heros(2).png",
+    "sha256": "34c9283b2850481f97f849b75e02876cf0c1c9cf50b1cd39111dae8ce14ec4ae"
+  },
+  {
+    "path": "public/images/mascot/plans.png",
+    "provided_asset": "plans-raccoon-background(2).png",
+    "sha256": "4cdc0468ba4015caae66c62709004b2ee82eeeac6d8b0068b88bca21f6e7e310"
+  },
+  {
+    "path": "public/images/mascot/templates.png",
+    "provided_asset": "plantillas-mapache(2).png",
+    "sha256": "b26a871d6b9de7d0a81926a209acf8ce8796c9214605e06f1b278b7dac877d8e"
+  }
+]

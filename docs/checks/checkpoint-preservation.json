@@ -1,0 +1,8 @@
+{
+  "files_compared": 195,
+  "source_files_changed_since_checkpoint": [
+    "app/globals.css"
+  ],
+  "reason": "Limitar Tailwind a fuentes de UI; excluir utilidades generadas a partir de documentos",
+  "checkpoint_sha256": "8684b9224d2b4f68e3753e1c710a58914c9ae7e31f5dffaa8c9ecac45f1526fc"
+}

@@ -1,0 +1,230 @@
+@import "./styles/navigation.css";
+@import "./styles/hero.css";
+@import "./styles/benefits.css";
+@import "./styles/workflow.css";
+@import "./styles/pricing-footer.css";
+
+.marketing-page {
+  background: #fbfcfc;
+}
+
+.section-space {
+  padding-block: 96px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 32px;
+  margin-bottom: 34px;
+}
+
+.section-heading > .section-copy {
+  max-width: 330px;
+}
+
+.section-title em {
+  font-family: Editorial, serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #08776f;
+}
+
+.marketing-page section[id] {
+  scroll-margin-top: var(--header-height, 78px);
+  outline: none;
+}
+
+/* =========================================================
+   PLANTILLAS
+   ========================================================= */
+
+.templates-section {
+  background: #edf2f3;
+}
+
+.templates-heading {
+  align-items: flex-end;
+  gap: clamp(32px, 5vw, 80px);
+}
+
+.templates-heading > div:first-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.templates-mascot-frame {
+  position: relative;
+
+  width: clamp(280px, 22vw, 340px);
+  max-width: 34%;
+
+  flex: 0 0 auto;
+
+  margin-right: clamp(0px, 1vw, 16px);
+  margin-bottom: -10px;
+
+  line-height: 0;
+}
+
+.templates-mascot {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  max-width: none;
+  max-height: none;
+
+  object-fit: contain;
+}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.faq-section {
+  box-sizing: border-box;
+
+  min-height: calc(
+    100svh - var(--header-height, 78px)
+  );
+
+  background: #fbfcfc;
+}
+
+@supports (height: 100dvh) {
+  .faq-section {
+    min-height: calc(
+      100dvh - var(--header-height, 78px)
+    );
+  }
+}
+
+.faq-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 80px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #dbe4e8;
+}
+
+.faq-item h3 button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  width: 100%;
+  padding: 24px 0;
+
+  text-align: left;
+
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.faq-item svg {
+  flex-shrink: 0;
+  color: #13796e;
+}
+
+.faq-answer p {
+  padding: 0 24px 23px 0;
+
+  font-size: 14px;
+  line-height: 1.85;
+
+  color: #5d7786;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .section-space {
+    padding-block: 72px;
+  }
+
+  .templates-heading {
+    gap: 28px;
+  }
+
+  .templates-mascot-frame {
+    width: 220px;
+    max-width: 32%;
+
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  .faq-layout {
+    gap: 36px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .section-space {
+    padding-block: 56px;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .faq-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .templates-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .templates-heading > div:first-child {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .templates-mascot-frame {
+    width: 120px;
+    max-width: 30%;
+
+    flex: 0 0 auto;
+
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  .templates-heading .section-title {
+    font-size: 28px;
+  }
+
+  .templates-heading .section-copy {
+    font-size: 14px;
+  }
+
+  .faq-item h3 button {
+    font-size: 14px;
+  }
+
+  .faq-answer p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 390px) {
+  .templates-mascot-frame {
+    display: none;
+  }
+}

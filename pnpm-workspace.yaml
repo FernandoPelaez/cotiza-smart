@@ -1,0 +1,11 @@
+# Only build scripts needed by the pinned, official registry dependencies.
+strictDepBuilds: true
+allowBuilds:
+  esbuild: true
+  fsevents: true
+  sharp: true
+  unrs-resolver: true
+# Security fixes for transitive toolchain dependencies; keep compatible major versions.
+overrides:
+  browserslist: 4.28.7
+  baseline-browser-mapping: 2.11.27

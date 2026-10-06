@@ -1,0 +1,279 @@
+{
+  "landing_static_html": {
+    "anchors": {
+      "hero": true,
+      "beneficios": true,
+      "como-funciona": true,
+      "plantillas": true,
+      "planes": true,
+      "preguntas-frecuentes": true
+    },
+    "header_logo_to_hero": true,
+    "header_faq": true,
+    "hero_demo": true
+  },
+  "browser_qa_performed": false,
+  "pdf": [
+    {
+      "file": "archive.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "atelier.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "aura.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "axis.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "balance.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "base.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "capital.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "clarity.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "contour.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "duo.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "edition.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "editorial.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "essential.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "focus.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "folio.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "format.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "frame.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "gallery.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "grid.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "heritage.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "horizon.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "ledger.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "letter.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "linear.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "manifest.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "module.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "monograph.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "multipagina.pdf",
+      "pages": 13,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "norte.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "origin.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "prisma.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "pure.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "signal.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "signature.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "studio.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "urban.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    },
+    {
+      "file": "volume.pdf",
+      "pages": 1,
+      "a4": true,
+      "iva_16": true,
+      "total_present": true
+    }
+  ],
+  "out_of_page_text": [],
+  "css_motion_rules": []
+}

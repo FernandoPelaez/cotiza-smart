@@ -1,0 +1,50 @@
+$ next build --webpack
+▲ Next.js 16.3.6 (webpack)
+✓ Running next.config.ts took 20ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 7.5s
+  Running TypeScript ...
+  Finished TypeScript in 2.0s ...
+  Collecting page data using 8 workers ...
+  Generating static pages using 8 workers (0/18) ...
+  Generating static pages using 8 workers (4/18) 
+  Generating static pages using 8 workers (8/18) 
+  Generating static pages using 8 workers (13/18) 
+✓ Generating static pages using 8 workers (18/18) in 341ms
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/billing/checkout
+├ ƒ /api/billing/portal
+├ ƒ /api/billing/webhook
+├ ƒ /api/business
+├ ƒ /api/logo
+├ ƒ /api/notifications/read
+├ ƒ /api/public/[token]/respond
+├ ƒ /api/public/[token]/view
+├ ƒ /api/quotes
+├ ƒ /api/quotes/[id]
+├ ƒ /api/quotes/[id]/duplicate
+├ ƒ /api/quotes/[id]/share
+├ ƒ /api/workspace
+├ ƒ /auth/callback
+├ ƒ /dashboard/[[...view]]
+├ ƒ /demo/[[...view]]
+├ ○ /forgot-password
+├ ƒ /login
+├ ƒ /quote/[token]
+├ ƒ /register
+├ ○ /reset-password
+├ ○ /robots.txt
+└ ○ /sitemap.xml
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+.env*
+!.env.example
+.vercel/
+.DS_Store
+.sites-runtime/
+.wrangler/
+tmp/
+tmp-*.tsx
+docs/cotiza-smart-history.bundle

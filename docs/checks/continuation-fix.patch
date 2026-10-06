@@ -1,0 +1,12 @@
+--- checkpoint/app/globals.css
++++ actual/app/globals.css
+@@ -1,4 +1,8 @@
+-@import "tailwindcss";
++@import "tailwindcss" source(none);
++/* La documentación y los reportes de pruebas no deben producir utilidades de la interfaz. */
++@source "./";
++@source "../components";
++@source "../hooks";
+ @font-face {
+   font-family: "Editorial";
+   src: url("/fonts/DejaVuSerif.ttf") format("truetype");

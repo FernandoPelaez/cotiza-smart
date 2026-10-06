@@ -1,0 +1,349 @@
+.workspace-page {
+  min-height: 100dvh;
+  background: #f5f8fa;
+}
+.workspace-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: #fffffffa;
+  border-bottom: 1px solid #dce6ec;
+}
+.workspace-top {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  min-height: 76px;
+}
+.workspace-context {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  font-size: 12px;
+  font-weight: 650;
+  color: #536b7c;
+}
+.workspace-divider {
+  width: 1px;
+  height: 24px;
+  background: #dce6eb;
+}
+.workspace-context > .business-name {
+  max-width: 210px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.workspace-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.workspace-header-actions .btn {
+  font-size: 12px;
+}
+.workspace-nav {
+  display: flex;
+  gap: 35px;
+  min-height: 43px;
+}
+.workspace-nav > a {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid transparent;
+  padding: 0 0 11px;
+  font-size: 12px;
+  color: #657c8b;
+}
+.workspace-nav > a.active {
+  border-color: #087e76;
+  color: #06466f;
+  font-weight: 750;
+}
+.workspace-nav > a:hover {
+  color: #087e76;
+}
+.profile-trigger {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #718797;
+}
+.profile-trigger > span {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e7f2f2;
+  font-size: 11px;
+  font-weight: 750;
+  color: #08675f;
+}
+.workspace-mobile-menu {
+  display: none;
+}
+.demo-banner {
+  background: #e8f3f4;
+  border-bottom: 1px solid #d9e9e9;
+  color: #3e6872;
+  font-size: 11px;
+}
+.demo-banner > .container-main {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding-block: 10px;
+}
+.demo-banner svg {
+  flex-shrink: 0;
+}
+.demo-banner a {
+  margin-left: auto;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.workspace-main {
+  padding-block: 35px 40px;
+}
+.workspace-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+.workspace-title h1 {
+  font-size: 32px;
+  font-weight: 650;
+  letter-spacing: -1.3px;
+  margin: 9px 0 10px;
+  line-height: 1.25;
+}
+.workspace-title p {
+  color: #6a808e;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.workspace-title .eyebrow {
+  font-size: 9px;
+  letter-spacing: 1.6px;
+}
+.workspace-footnote {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 20px;
+  margin-top: 12px;
+  border-top: 1px solid #dfe7ec;
+  color: #79909d;
+  font-size: 10px;
+}
+.workspace-footnote a {
+  color: #087c75;
+}
+.notification-trigger {
+  position: relative;
+  border: none;
+  background: transparent;
+}
+.notification-count {
+  position: absolute;
+  right: -3px;
+  top: -3px;
+  min-width: 16px;
+  height: 16px;
+  padding-inline: 3px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: #08685e;
+  font-size: 9px;
+  font-weight: 700;
+  border-radius: 8px;
+  border: 2px solid white;
+}
+.notification-panel {
+  max-width: 470px !important;
+  padding: 27px !important;
+  border-radius: 15px !important;
+}
+.notification-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+.notification-heading [data-slot="dialog-description"] {
+  font-size: 12px;
+  margin-top: 7px;
+}
+.notification-mark-all {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+}
+.notification-list {
+  max-height: min(480px, 65dvh);
+  overflow-y: auto;
+  margin-inline: -12px;
+}
+.notification-empty {
+  padding: 38px 23px;
+  text-align: center;
+  color: #768f9a;
+}
+.notification-empty svg {
+  margin-inline: auto;
+}
+.notification-empty h3 {
+  font-size: 19px;
+  font-weight: 650;
+  color: #24485e;
+  margin-top: 15px;
+}
+.notification-empty p {
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 10px;
+}
+.notification-item {
+  display: flex;
+  gap: 12px;
+  padding: 18px 12px;
+  border-top: 1px solid #e3ebee;
+}
+.notification-item.unread {
+  background: #f1f8f7;
+}
+.notification-item > div {
+  flex: 1;
+  min-width: 0;
+}
+.notification-item strong {
+  font-size: 12px;
+}
+.notification-item p,
+.notification-item a,
+.notification-item > div > span {
+  font-size: 11px;
+  line-height: 1.7;
+  display: block;
+  overflow-wrap: anywhere;
+}
+.notification-item p {
+  color: #637e8b;
+  margin: 5px 0;
+}
+.notification-item a {
+  color: #086b69;
+  font-weight: 650;
+}
+.notification-item time {
+  display: block;
+  font-size: 9px;
+  color: #7c8f9a;
+  margin-top: 7px;
+}
+.notification-icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.notification-read {
+  font-size: 10px;
+  color: #087a70;
+  text-decoration: underline;
+  margin-top: 8px;
+}
+.unread-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #079d8b;
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+@media (max-width: 1000px) {
+  .workspace-context {
+    display: none;
+  }
+  .workspace-nav {
+    gap: 28px;
+  }
+}
+@media (max-width: 700px) {
+  .workspace-top {
+    min-height: 66px;
+    gap: 10px;
+  }
+  .workspace-header .brand {
+    font-size: 17px;
+    gap: 7px;
+  }
+  .workspace-header .brand img {
+    width: 31px;
+    height: 31px;
+  }
+  .workspace-header-actions {
+    gap: 6px;
+  }
+  .workspace-header-actions > .btn {
+    width: 34px;
+    min-height: 34px;
+    padding: 0;
+  }
+  .workspace-header-actions > .btn span {
+    display: none;
+  }
+  .workspace-header-actions > .btn svg {
+    width: 17px;
+    height: 17px;
+  }
+  .workspace-nav {
+    display: none;
+  }
+  .workspace-mobile-menu {
+    display: flex;
+  }
+  .profile-trigger > svg {
+    display: none;
+  }
+  .profile-trigger > span {
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+  }
+  .workspace-main {
+    padding-block: 25px;
+  }
+  .workspace-title {
+    margin-bottom: 24px;
+  }
+  .workspace-title h1 {
+    font-size: 27px;
+  }
+  .workspace-title p {
+    font-size: 12px;
+  }
+  .workspace-footnote {
+    font-size: 9px;
+    flex-wrap: wrap;
+  }
+  .demo-banner {
+    font-size: 10px;
+  }
+  .demo-banner strong {
+    font-weight: 650;
+  }
+  .demo-banner a {
+    display: none;
+  }
+}

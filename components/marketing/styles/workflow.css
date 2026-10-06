@@ -1,0 +1,1246 @@
+.workflow-section {
+  min-height: calc(100svh - var(--header-height, 78px));
+  display: flex;
+  align-items: center;
+  background: #092f45;
+  color: #edf6f8;
+  overflow: hidden;
+}
+
+/*
+ * Compactamos verticalmente la sección.
+ * No modifica el ancho de container-main.
+ */
+.workflow-section.section-space {
+  padding-block: 34px;
+}
+
+.workflow-section .eyebrow {
+  color: #71d9c5;
+}
+
+.workflow-section .section-copy {
+  color: #adcad4;
+}
+
+.workflow-tabs {
+  display: grid !important;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  height: auto !important;
+  width: 100%;
+  gap: 8px !important;
+  border-bottom: 1px solid #35596b;
+  overflow: visible;
+}
+
+.workflow-tabs [role="tab"] {
+  color: #b5d0db !important;
+  white-space: normal;
+  font-size: 12px;
+  padding: 14px 3px !important;
+  gap: 8px;
+}
+
+.workflow-tabs [role="tab"][data-state="active"] {
+  color: #88ead6 !important;
+}
+
+.workflow-tabs [role="tab"] > span {
+  font-size: 10px;
+  color: #80aaa9;
+}
+
+/*
+ * IMPORTANTE:
+ * Se mantiene exactamente el ancho aprobado.
+ */
+.workflow-body {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 52px;
+  align-items: center;
+  padding-block: 16px 8px;
+  min-height: 300px;
+}
+
+.workflow-copy h3 {
+  font-size: 34px;
+  line-height: 1.16;
+  letter-spacing: -1.2px;
+  margin: 14px 0;
+  color: #fff;
+}
+
+.workflow-copy p {
+  font-size: 13px;
+  line-height: 1.75;
+  color: #b8d0da;
+  max-width: 340px;
+}
+
+.workflow-number {
+  font-family: Editorial, serif;
+  font-size: 54px;
+  line-height: 1;
+  color: #7adbc9;
+}
+
+.workflow-number small {
+  font-family: Manrope, sans-serif;
+  font-size: 11px;
+  color: #8db0be;
+  letter-spacing: 1px;
+}
+
+.workflow-copy a {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 18px;
+  color: #8be4cf;
+}
+
+/*
+ * NO cambiar.
+ * Este es el ancho que ya quedó aprobado.
+ */
+.workflow-preview {
+  width: min(100%, 640px);
+  min-width: 0;
+  justify-self: end;
+}
+
+.workflow-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.workflow-progress {
+  height: 3px;
+  max-width: 250px;
+  flex: 1;
+  margin-right: auto;
+  background: #345e6d;
+  overflow: hidden;
+}
+
+.workflow-progress span {
+  display: block;
+  background: #74e1cb;
+  height: 100%;
+  width: 14.28%;
+}
+
+.workflow-compact {
+  display: none;
+}
+
+/* =========================================================
+   VENTANA PRINCIPAL DEL PREVIEW
+   ========================================================= */
+
+.flow-window {
+  width: 100%;
+  height: 292px;
+  min-height: 0;
+  border-radius: 12px;
+  border: 1px solid #93b4c266;
+  background: #f7fafb;
+  color: #21485d;
+  box-shadow: 0 25px 60px -28px #0009;
+  overflow: hidden;
+}
+
+.flow-window-bar {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #e9f0f3;
+  padding: 0 12px;
+  border-bottom: 1px solid #cedee5;
+  font-size: 9px;
+  color: #587d8d;
+}
+
+.flow-window-bar > span:nth-child(2) {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.flow-window-bar small {
+  font-size: 8px;
+}
+
+.flow-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.flow-dots i {
+  width: 5px;
+  height: 5px;
+  background: #8ba9b9;
+  border-radius: 50%;
+}
+
+.flow-app {
+  display: flex;
+  height: calc(100% - 32px);
+  min-height: 0;
+}
+
+.flow-rail {
+  width: 46px;
+  flex-shrink: 0;
+  background: #073e5b;
+  color: #adc9d7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+}
+
+.flow-rail > span {
+  font-size: 13px;
+  font-weight: 800;
+  color: white;
+}
+
+.flow-rail > span > span {
+  color: #57dfc5;
+}
+
+.flow-rail > svg {
+  width: 16px;
+  height: 16px;
+}
+
+.flow-rail > div {
+  margin-top: auto;
+  background: #295e73;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  font-size: 8px;
+}
+
+.flow-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  overflow: hidden;
+}
+
+.flow-main > * {
+  width: 100%;
+}
+
+.flow-eyebrow {
+  font-size: 7.5px;
+  letter-spacing: 1.2px;
+  font-weight: 750;
+  color: #137d72;
+}
+
+.flow-window h4 {
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: -0.7px;
+  font-weight: 750;
+  margin: 7px 0;
+}
+
+.flow-window p {
+  font-size: 10px;
+  line-height: 1.55;
+  color: #5b7788;
+}
+
+.flow-window label {
+  display: grid;
+  gap: 4px;
+  font-size: 8px;
+  color: #4c6c7e;
+  margin-top: 8px;
+}
+
+.flow-window input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #cfdfe7;
+  padding: 7px 9px;
+  border-radius: 5px;
+  background: white;
+  color: #23475e;
+  font-size: 10px;
+}
+
+.flow-window input:focus {
+  outline: none;
+}
+
+.flow-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  background: #06466f;
+  color: white;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+/* =========================================================
+   PASOS 01 / 02 / 03
+   ========================================================= */
+
+.flow-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.flow-form {
+  max-width: 380px;
+  margin: auto;
+}
+
+.flow-form > p {
+  font-size: 8px;
+  margin-top: 8px;
+}
+
+.flow-business {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.flow-business > span {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  background: #dcf0eb;
+  border: 1px solid #addcd0;
+  border-radius: 9px;
+  color: #237a6e;
+  flex-shrink: 0;
+}
+
+.flow-business > span svg {
+  width: 22px;
+  height: 22px;
+}
+
+.flow-business h4 {
+  margin: 0 0 3px;
+}
+
+.flow-business p {
+  margin: 0;
+}
+
+.flow-choice {
+  display: flex;
+  gap: 7px;
+  margin-top: 8px;
+}
+
+.flow-choice > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 8px;
+  border: 1px solid #d4e0e5;
+  font-size: 9px;
+  border-radius: 5px;
+}
+
+.flow-choice .selected {
+  border-color: #25a18a;
+  color: #0c7868;
+  background: #e2f5ed;
+}
+
+.flow-mini-ledger {
+  display: flex;
+  border-block: 1px solid #d8e5ea;
+  margin-top: 14px;
+  padding-block: 9px;
+  gap: 18px;
+  font-size: 9px;
+  color: #4b7482;
+}
+
+/* =========================================================
+   PASO 04 — PLANTILLAS
+   ========================================================= */
+
+.flow-product-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.flow-product-heading > span {
+  font-size: 8px;
+  color: #618494;
+}
+
+.flow-product-heading h4 {
+  margin-bottom: 0;
+}
+
+.flow-template-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 8px;
+}
+
+.flow-template-row > div {
+  min-width: 0;
+}
+
+.flow-template-row > div > div {
+  height: 145px;
+  container-type: inline-size;
+  background: #e4edef;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.flow-template-row strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 8px;
+}
+
+.flow-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #0d796c;
+  font-size: 9px;
+  font-weight: 750;
+  margin-top: 10px;
+}
+
+/* =========================================================
+   PASO 05 — EDITOR / COTIZACIÓN
+   ========================================================= */
+
+.flow-editor {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 15px;
+  align-items: center;
+}
+
+.flow-editor h4 {
+  font-size: 18px;
+}
+
+.flow-editor .flow-two {
+  gap: 7px;
+}
+
+.flow-editor label {
+  margin-top: 6px;
+}
+
+.flow-editor input {
+  padding: 6px 8px;
+  font-size: 9px;
+}
+
+.flow-live-paper {
+  container-type: inline-size;
+  align-self: center;
+  max-height: 205px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 15px #213f5420;
+}
+
+.flow-live-paper > span {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
+  background: #e3f4ed;
+  padding: 6px;
+  color: #247161;
+  font-size: 7px;
+}
+
+.flow-sum {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 9px;
+  margin-top: 8px;
+}
+
+.flow-sum.total {
+  border-top: 1px solid #d4e2e6;
+  padding-top: 7px;
+  font-size: 11px;
+  color: #06466f;
+}
+
+.flow-editor .flow-text-link {
+  margin-top: 8px;
+}
+
+/* =========================================================
+   PASO 06 — COMPARTIR
+   ========================================================= */
+
+.flow-share {
+  text-align: center;
+  max-width: 390px;
+  margin: auto;
+}
+
+.flow-share-icon {
+  display: grid;
+  place-items: center;
+  margin: auto;
+  width: 34px;
+  height: 34px;
+  background: #dff2eb;
+  color: #0f8171;
+  border-radius: 50%;
+}
+
+.flow-share-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.flow-share h4 {
+  margin: 5px 0 2px;
+}
+
+.flow-share > p {
+  margin: 0;
+  font-size: 9px;
+}
+
+.flow-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 9px;
+  background: white;
+  border: 1px solid #dce6e9;
+  padding: 7px 9px;
+  margin-top: 7px;
+  border-radius: 5px;
+}
+
+.flow-delivery {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  font-size: 9px;
+  margin: 7px 0;
+}
+
+.flow-delivery span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.flow-delivery svg {
+  width: 14px;
+  height: 14px;
+}
+
+.flow-response {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 10px;
+  background: #dbf3e6;
+  border-left: 3px solid #219364;
+  color: #17754c;
+  text-align: left;
+}
+
+.flow-response > svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.flow-response strong {
+  display: block;
+  font-size: 10px;
+}
+
+.flow-response span {
+  font-size: 8px;
+  display: block;
+  margin-top: 2px;
+}
+
+.flow-share .flow-text-link {
+  margin-top: 7px;
+}
+
+/* =========================================================
+   PASO 07 — DASHBOARD
+   ========================================================= */
+
+.flow-notification {
+  position: relative;
+}
+
+.flow-notification svg {
+  width: 17px;
+  height: 17px;
+}
+
+.flow-notification b {
+  position: absolute;
+  right: -4px;
+  top: -7px;
+  background: #148572;
+  color: white;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  font-size: 7px;
+  line-height: 12px;
+  text-align: center;
+}
+
+.flow-workspace .flow-product-heading h4 {
+  margin: 4px 0 0;
+}
+
+.flow-search-bar {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  font-size: 8px;
+  color: #7b94a0;
+  background: white;
+  padding: 7px 9px;
+  border: 1px solid #d8e5e9;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+.flow-search-bar svg {
+  width: 11px;
+  height: 11px;
+}
+
+.flow-status-filters {
+  display: flex;
+  gap: 12px;
+  margin-top: 7px;
+  font-size: 7px;
+  color: #6d8896;
+}
+
+.flow-status-filters strong {
+  color: #087665;
+}
+
+.flow-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10px;
+  border-bottom: 1px solid #dce6eb;
+  padding: 6px 0;
+  align-items: center;
+  font-size: 9px;
+}
+
+.flow-row > div > strong {
+  display: block;
+  font-weight: 700;
+}
+
+.flow-row > div > span {
+  display: block;
+  font-size: 7px;
+  margin-top: 2px;
+  color: #627f8b;
+}
+
+.flow-row > strong {
+  font-size: 8px;
+}
+
+.flow-status {
+  font-size: 7px;
+  padding: 4px 5px;
+  border-radius: 4px;
+}
+
+.flow-accepted {
+  background: #dcf1e5;
+  color: #216e4e;
+}
+
+.flow-viewed {
+  background: #e3eefb;
+  color: #2d5b8b;
+}
+
+.flow-draft {
+  background: #e9edf0;
+  color: #627483;
+}
+
+.flow-workspace .flow-text-link {
+  margin-top: 6px;
+}
+
+/* =========================================================
+   TABLET / LAPTOP
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .workflow-section.section-space {
+    padding-block: 30px;
+  }
+
+  .workflow-body {
+    gap: 25px;
+    grid-template-columns: 0.8fr 1.2fr;
+    padding-block: 14px 8px;
+    min-height: 290px;
+  }
+
+  .workflow-preview {
+    width: min(100%, 580px);
+  }
+
+  .flow-window {
+    height: 286px;
+  }
+
+  .flow-main {
+    padding: 12px 14px;
+  }
+
+  .workflow-copy h3 {
+    font-size: 31px;
+  }
+
+  .workflow-tabs [role="tab"] {
+    font-size: 11px;
+    gap: 5px;
+  }
+
+  .flow-rail {
+    width: 40px;
+    gap: 15px;
+  }
+
+  .flow-window h4 {
+    font-size: 19px;
+  }
+
+  .flow-row {
+    gap: 7px;
+  }
+
+  .flow-template-row > div > div {
+    height: 135px;
+  }
+
+  .flow-live-paper {
+    max-height: 195px;
+  }
+}
+
+/* =========================================================
+   TABLET / MÓVIL
+   Aquí quitamos la altura fija para no romper responsive.
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .workflow-section {
+    min-height: auto;
+    display: block;
+  }
+
+  .workflow-section.section-space {
+    padding-block: 48px;
+  }
+
+  .workflow-tabs {
+    display: none !important;
+  }
+
+  .workflow-compact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 11px;
+    color: #b7d6dd;
+    border-bottom: 1px solid #456879;
+    padding-bottom: 18px;
+  }
+
+  .workflow-compact select {
+    background: #133f56;
+    color: white;
+    padding: 10px;
+    border: 1px solid #527786;
+    border-radius: 6px;
+    max-width: 220px;
+  }
+
+  .workflow-body {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    min-height: 0;
+    padding-block: 24px 10px;
+  }
+
+  .workflow-copy p {
+    max-width: 540px;
+  }
+
+  .workflow-copy h3 {
+    margin: 10px 0;
+    font-size: 30px;
+  }
+
+  .workflow-number {
+    font-size: 36px;
+  }
+
+  .flow-window {
+    height: auto;
+    min-height: 375px;
+  }
+
+  .flow-app {
+    height: auto;
+    min-height: 330px;
+  }
+
+  .flow-main {
+    display: block;
+    padding: 24px;
+    overflow: visible;
+  }
+
+  .workflow-preview {
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .flow-window h4 {
+    font-size: 23px;
+  }
+
+  .flow-window p {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+  .flow-window label {
+    gap: 6px;
+    margin-top: 13px;
+    font-size: 9px;
+  }
+
+  .flow-window input {
+    padding: 9px 10px;
+    font-size: 11px;
+  }
+
+  .flow-button {
+    padding: 11px 15px;
+    margin-top: 18px;
+    font-size: 11px;
+  }
+
+  .flow-two {
+    gap: 14px;
+  }
+
+  .flow-form > p {
+    margin-top: 14px;
+    font-size: 9px;
+  }
+
+  .flow-business {
+    gap: 15px;
+    margin: 15px 0;
+  }
+
+  .flow-business > span {
+    width: 49px;
+    height: 49px;
+  }
+
+  .flow-business > span svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .flow-choice {
+    gap: 8px;
+    margin-top: 15px;
+  }
+
+  .flow-choice > span {
+    padding: 9px;
+    font-size: 10px;
+  }
+
+  .flow-mini-ledger {
+    margin-top: 26px;
+    padding-block: 15px;
+    gap: 22px;
+    font-size: 10px;
+  }
+
+  .flow-template-row {
+    gap: 11px;
+    margin-top: 14px;
+  }
+
+  .flow-template-row > div > div {
+    height: auto;
+    aspect-ratio: 1 / 1.5;
+    padding: 7px;
+  }
+
+  .flow-template-row strong {
+    margin-top: 9px;
+    font-size: 9px;
+  }
+
+  .flow-text-link {
+    margin-top: 20px;
+    font-size: 10px;
+  }
+
+  .flow-editor {
+    gap: 18px;
+  }
+
+  .flow-editor h4 {
+    font-size: 21px;
+  }
+
+  .flow-editor .flow-two {
+    gap: 9px;
+  }
+
+  .flow-editor label {
+    margin-top: 13px;
+  }
+
+  .flow-editor input {
+    padding: 9px 10px;
+    font-size: 11px;
+  }
+
+  .flow-live-paper {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .flow-live-paper > span {
+    padding: 8px;
+  }
+
+  .flow-sum {
+    margin-top: 15px;
+    font-size: 10px;
+  }
+
+  .flow-sum.total {
+    padding-top: 10px;
+    font-size: 13px;
+  }
+
+  .flow-share-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .flow-share-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .flow-share h4 {
+    margin-bottom: 6px;
+  }
+
+  .flow-share > p {
+    font-size: 11px;
+  }
+
+  .flow-link {
+    gap: 8px;
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 10px;
+  }
+
+  .flow-delivery {
+    gap: 25px;
+    margin: 15px 0;
+    font-size: 10px;
+  }
+
+  .flow-delivery svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .flow-response {
+    gap: 13px;
+    padding: 14px;
+  }
+
+  .flow-response > svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .flow-response strong {
+    font-size: 12px;
+  }
+
+  .flow-response span {
+    margin-top: 4px;
+    font-size: 9px;
+  }
+
+  .flow-share .flow-text-link {
+    margin-top: 20px;
+  }
+
+  .flow-notification svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .flow-search-bar {
+    gap: 8px;
+    padding: 10px;
+    margin-top: 8px;
+    font-size: 9px;
+  }
+
+  .flow-status-filters {
+    gap: 15px;
+    margin-top: 17px;
+    font-size: 8px;
+  }
+
+  .flow-row {
+    gap: 12px;
+    padding: 15px 0;
+    font-size: 10px;
+  }
+
+  .flow-row > div > span {
+    margin-top: 4px;
+    font-size: 8px;
+  }
+
+  .flow-row > strong {
+    font-size: 9px;
+  }
+
+  .flow-status {
+    padding: 5px 6px;
+    font-size: 8px;
+  }
+
+  .flow-workspace .flow-text-link {
+    margin-top: 20px;
+  }
+}
+
+/* =========================================================
+   MÓVIL PEQUEÑO
+   ========================================================= */
+
+@media (max-width: 430px) {
+  .workflow-section.section-space {
+    padding-block: 38px;
+  }
+
+  .flow-main {
+    padding: 18px 13px;
+  }
+
+  .flow-rail {
+    width: 32px;
+    gap: 23px;
+  }
+
+  .flow-rail > svg {
+    width: 14px;
+  }
+
+  .flow-window-bar {
+    height: auto;
+    min-height: 36px;
+    padding: 10px;
+  }
+
+  .flow-window-bar small {
+    display: none;
+  }
+
+  .flow-window h4 {
+    font-size: 20px;
+  }
+
+  .flow-two {
+    gap: 8px;
+  }
+
+  .flow-editor {
+    gap: 10px;
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .flow-editor input {
+    font-size: 10px;
+    padding: 7px;
+  }
+
+  .flow-editor .flow-two {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .flow-editor .flow-two label {
+    margin-top: 7px;
+  }
+
+  .flow-row > strong {
+    display: none;
+  }
+
+  .flow-row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .flow-template-row {
+    gap: 6px;
+  }
+
+  .flow-template-row > div > div {
+    padding: 4px;
+  }
+
+  .flow-response {
+    padding: 11px;
+    gap: 7px;
+  }
+
+  .flow-delivery {
+    gap: 10px;
+    font-size: 9px;
+  }
+
+  .flow-mini-ledger {
+    gap: 12px;
+  }
+
+  .workflow-controls .btn {
+    font-size: 11px;
+    padding: 10px;
+  }
+
+  .flow-window {
+    height: auto;
+    min-height: 380px;
+  }
+
+  .flow-app {
+    height: auto;
+  }
+}
+
+@media (max-height: 760px) and (min-width: 801px) {
+  .workflow-section.section-space {
+    padding-block: 22px;
+  }
+
+  .workflow-tabs [role="tab"] {
+    padding-block: 11px !important;
+  }
+
+  .workflow-body {
+    padding-block: 12px 6px;
+    min-height: 278px;
+  }
+
+  .workflow-copy h3 {
+    margin: 10px 0;
+    font-size: 31px;
+  }
+
+  .workflow-copy p {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .workflow-number {
+    font-size: 48px;
+  }
+
+  .workflow-copy a {
+    margin-top: 14px;
+  }
+
+  .flow-window {
+    height: 272px;
+  }
+
+  .flow-main {
+    padding-block: 10px;
+  }
+
+  .flow-template-row > div > div {
+    height: 125px;
+  }
+
+  .flow-live-paper {
+    max-height: 180px;
+  }
+
+  .workflow-controls {
+    margin-top: 4px;
+  }
+}
