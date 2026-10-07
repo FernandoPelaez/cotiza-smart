@@ -6,17 +6,20 @@
   flex-wrap: wrap;
   margin-bottom: 30px;
 }
+
 .settings-tabs [role="tab"] {
   font-size: 12px;
   padding-block: 12px;
   flex-shrink: 0;
 }
+
 .settings-section {
   display: grid;
   grid-template-columns: 0.7fr 1.3fr;
   gap: 70px;
   max-width: 1050px;
 }
+
 .settings-intro h2 {
   font-size: 23px;
   font-weight: 650;
@@ -24,11 +27,13 @@
   line-height: 1.4;
   margin-bottom: 14px;
 }
+
 .settings-intro p {
   font-size: 13px;
   color: #6a8593;
   line-height: 1.8;
 }
+
 .business-form,
 .profile-form {
   background: white;
@@ -36,6 +41,7 @@
   padding: 28px;
   border-radius: 12px;
 }
+
 .business-form-progress {
   display: flex;
   justify-content: space-between;
@@ -45,15 +51,18 @@
   letter-spacing: 1px;
   margin-bottom: 12px;
 }
+
 .business-form-progress span:last-child {
   letter-spacing: 0;
 }
+
 .logo-upload {
   display: flex;
   gap: 20px;
   align-items: center;
   margin-bottom: 25px;
 }
+
 .logo-upload-trigger {
   width: 72px;
   height: 72px;
@@ -65,51 +74,62 @@
   flex-shrink: 0;
   color: #648a9c;
 }
+
 .logo-upload-trigger img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
   padding: 5px;
 }
+
 .logo-upload > div > span {
   display: block;
   font-size: 10px;
   color: #7d949f;
   margin-top: 8px;
 }
+
 .logo-upload > div > button:last-child {
   display: block;
 }
+
 .business-form .field label {
   font-size: 12px;
 }
+
 .business-form .field input {
   font-size: 13px;
   min-height: 43px;
 }
+
 .business-form-actions {
   display: flex;
   gap: 12px;
   justify-content: space-between;
   margin-top: 25px;
 }
+
 .business-form-actions .btn {
   font-size: 12px;
 }
+
 .activity-picker {
   margin-top: 25px;
 }
+
 .activity-picker > label {
   display: block;
   font-size: 12px;
   font-weight: 650;
   margin-bottom: 12px;
 }
+
 .activity-options {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px !important;
 }
+
 .activity-options > label {
   display: flex;
   flex-direction: column;
@@ -122,16 +142,19 @@
   font-size: 12px;
   cursor: pointer;
 }
+
 .activity-options > label.selected {
   color: #126b60;
   border-color: #168d7e;
   background: #e8f6ef;
   box-shadow: inset 0 0 0 1px #168d7e;
 }
+
 .activity-options > label:has(:focus-visible) {
   outline: 3px solid #14b8a660;
   outline-offset: 3px;
 }
+
 .security-note {
   display: flex;
   align-items: flex-start;
@@ -141,10 +164,12 @@
   color: #6b8794;
   margin-top: 18px;
 }
+
 .security-note svg {
   flex-shrink: 0;
   margin-top: 2px;
 }
+
 .onboarding-dialog {
   padding: 28px !important;
   max-width: 600px !important;
@@ -152,138 +177,275 @@
   overflow-y: auto;
   border-radius: 18px !important;
 }
+
 .onboarding-dialog .business-form {
   padding: 5px 0 0;
   border: 0;
   box-shadow: none;
 }
+
 .onboarding-dialog .business-form-progress {
   margin-top: 12px;
 }
+
 .onboarding-dialog [data-slot="dialog-title"] {
   font-size: 28px;
   letter-spacing: -1.1px;
 }
+
 .onboarding-dialog [data-slot="dialog-description"] {
   font-size: 12px;
   line-height: 1.9;
   max-width: 440px;
 }
+
 .onboarding-dialog .logo-upload-trigger {
   width: 62px;
   height: 62px;
 }
+
 .upgrade-dialog {
-  max-width: 600px !important;
-  padding: 30px !important;
-  border-radius: 18px !important;
+  max-width: 650px !important;
+  padding: 0 !important;
+  gap: 0 !important;
+  overflow: hidden;
+  border-radius: 20px !important;
 }
+
+.upgrade-header {
+  padding: 30px 30px 24px;
+  gap: 0 !important;
+}
+
+.upgrade-icon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  margin-bottom: 18px;
+  border-radius: 13px;
+  color: var(--accent-foreground);
+  background: var(--accent);
+}
+
 .upgrade-dialog [data-slot="dialog-title"] {
-  font-size: 26px !important;
-  letter-spacing: -1px;
+  max-width: 520px;
+  font-size: 25px !important;
+  font-weight: 700;
   line-height: 1.3 !important;
+  letter-spacing: -0.9px;
+  color: var(--foreground);
 }
+
 .upgrade-dialog [data-slot="dialog-description"] {
+  max-width: 540px;
+  margin-top: 9px;
   font-size: 13px !important;
-  line-height: 1.8 !important;
+  line-height: 1.7 !important;
+  color: var(--muted-foreground);
 }
+
 .upgrade-options {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 13px;
-  margin-top: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 0 30px 26px;
 }
-.upgrade-options > div {
-  border: 1px solid #d5e5eb;
-  border-radius: 10px;
-  padding: 21px;
-  background: #f7fbfc;
+
+.upgrade-option {
+  display: flex;
+  min-width: 0;
+  min-height: 215px;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
 }
-.upgrade-options > div:first-child {
-  border-color: #aadbcf;
-  background: #f0faf6;
+
+.upgrade-option:first-child {
+  border-color: color-mix(
+    in srgb,
+    var(--accent-foreground) 28%,
+    var(--border)
+  );
+  background: color-mix(in srgb, var(--accent) 45%, var(--card));
 }
-.upgrade-options h3 {
-  font-size: 17px;
+
+.upgrade-option:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--primary) 28%, var(--border));
+  box-shadow: 0 16px 32px -26px var(--primary);
+}
+
+.upgrade-option h3 {
+  margin: 0;
+  font-size: 15px;
   font-weight: 700;
+  color: var(--foreground);
 }
-.upgrade-options p {
-  font-size: 29px;
-  margin-top: 12px;
-  letter-spacing: -1px;
+
+.upgrade-price {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  margin-top: 14px;
 }
-.upgrade-options p span {
+
+.upgrade-price-value {
+  font-size: 31px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1.2px;
+  color: var(--foreground);
+}
+
+.upgrade-price-period {
+  margin-bottom: 2px;
   font-size: 10px;
-  color: #638190;
-  letter-spacing: 0;
-  margin-left: 5px;
+  font-weight: 650;
+  color: var(--muted-foreground);
 }
-.upgrade-options small {
-  display: block;
-  font-size: 11px;
-  line-height: 1.7;
-  color: #6c8795;
-  margin-top: 12px;
+
+.upgrade-benefit {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--muted-foreground);
 }
-.upgrade-options .btn {
+
+.upgrade-benefit-icon {
+  display: grid;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 999px;
+  color: var(--accent-foreground);
+  background: var(--accent);
+}
+
+.upgrade-plan-button {
   width: 100%;
-  font-size: 11px;
-  margin-top: 18px;
+  margin-top: auto;
 }
+
+.upgrade-footer {
+  display: flex;
+  justify-content: center;
+  padding: 17px 30px 19px;
+  border-top: 1px solid var(--border);
+}
+
+.upgrade-secondary-action {
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--secondary-foreground);
+  font-size: 12px;
+  font-weight: 700;
+  transition:
+    color 160ms ease,
+    background 160ms ease;
+}
+
+.upgrade-secondary-action:hover {
+  color: var(--primary);
+  background: var(--secondary);
+}
+
 .settings-plans {
   padding-top: 12px;
 }
+
 @media (max-width: 900px) {
   .settings-section {
     gap: 30px;
     grid-template-columns: 0.7fr 1.3fr;
   }
+
   .business-form {
     padding: 22px;
   }
 }
+
 @media (max-width: 700px) {
   .settings-section {
     grid-template-columns: 1fr;
     gap: 22px;
   }
+
   .settings-intro h2 {
     font-size: 21px;
     margin-bottom: 8px;
   }
+
   .business-form {
     padding: 20px;
   }
+
   .activity-options {
     gap: 8px !important;
   }
+
   .activity-options > label {
     font-size: 11px;
   }
+
   .onboarding-dialog {
     padding: 24px !important;
   }
+
   .onboarding-dialog [data-slot="dialog-title"] {
     font-size: 25px;
   }
-  .upgrade-dialog {
-    padding: 23px !important;
+
+  .upgrade-header {
+    padding: 25px 22px 20px;
   }
+
   .upgrade-options {
-    gap: 10px;
+    gap: 11px;
+    padding: 0 22px 22px;
   }
-  .upgrade-options > div {
-    padding: 16px;
+
+  .upgrade-option {
+    min-height: 205px;
+    padding: 17px;
   }
-  .upgrade-options p {
-    font-size: 25px;
+
+  .upgrade-price-value {
+    font-size: 27px;
   }
+
+  .upgrade-footer {
+    padding: 15px 22px 17px;
+  }
+
   .settings-tabs {
     gap: 20px;
   }
 }
-@media (max-width: 370px) {
+
+@media (max-width: 560px) {
   .upgrade-options {
     grid-template-columns: 1fr;
+  }
+
+  .upgrade-option {
+    min-height: 190px;
+  }
+
+  .upgrade-dialog [data-slot="dialog-title"] {
+    font-size: 22px !important;
   }
 }
