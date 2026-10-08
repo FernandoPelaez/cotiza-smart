@@ -1,3 +1,4 @@
+
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
@@ -11,7 +12,7 @@ import { useWorkspace } from "@/components/workspace/WorkspaceProvider";
 import { calculateTotals } from "@/lib/domain/money";
 import type { Quote, QuoteInput } from "@/types/domain";
 export function useQuoteDraft(quote?: Quote, template?: string) {
-  const { workspace, base, save } = useWorkspace();
+  const { workspace, base, save, setLimitOpen } = useWorkspace();
   const router = useRouter();
   const [input, setInput] = useState<QuoteInput>(() => {
     if (quote)
@@ -77,12 +78,23 @@ export function useQuoteDraft(quote?: Quote, template?: string) {
     setBusy(true);
     setError("");
     try {
+      const isThirdFreeQuote =
+        !current &&
+        effectivePlan(workspace.subscription) === "free" &&
+        workspace.creations_used === 2;
       const saved = await save(parsed.data, current, requestId);
       setCurrent(saved);
       setSavedVersion(editVersion);
       setSaveState("Guardado");
-      toast.success("Tu cotización está guardada.");
-      if (openPreview) router.push(`${base}/cotizaciones/${saved.id}`);
+      if (!isThirdFreeQuote) {
+        toast.success("Tu cotización está guardada.");
+      }
+      if (isThirdFreeQuote) {
+        // Evita la redirección para mostrar el modal al completar el plan Free.
+        setLimitOpen(true);
+      } else if (openPreview) {
+        router.push(`${base}/cotizaciones/${saved.id}`);
+      }
     } catch (e) {
       setError(e instanceof Error ? e.message : "No se pudo guardar.");
       setSaveState("No guardado");
@@ -91,7 +103,7 @@ export function useQuoteDraft(quote?: Quote, template?: string) {
       setBusy(false);
     }
   }
-  /** Solo se autoguardan borradores ya creados y válidos. La versión evita perder cambios hechos durante una solicitud. */
+  /** Autoguarda borradores válidos y controla versiones para evitar perder cambios. */
   useEffect(() => {
     if (
       autoSavePaused ||
@@ -168,3 +180,4 @@ export function useQuoteDraft(quote?: Quote, template?: string) {
     next,
   };
 }
+
