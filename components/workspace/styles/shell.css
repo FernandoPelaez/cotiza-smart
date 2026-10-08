@@ -23,7 +23,6 @@
   align-items: center;
   gap: 14px;
   min-width: 0;
-  flex-shrink: 0;
   font-size: 12px;
   font-weight: 650;
   color: #536b7c;
@@ -40,10 +39,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.workspace-context > .plan-tag {
-  flex-shrink: 0;
 }
 
 .workspace-header-actions {
@@ -102,8 +97,49 @@
   color: #08675f;
 }
 
+.workspace-account-menu .workspace-logout-item {
+  color: #b42318;
+  cursor: pointer;
+}
+
+.workspace-account-menu .workspace-logout-item svg {
+  color: #b42318;
+}
+
+.workspace-account-menu .workspace-logout-item[data-highlighted],
+.workspace-account-menu .workspace-logout-item:hover,
+.workspace-account-menu .workspace-logout-item:focus-visible {
+  color: #b42318;
+  background: #fef3f2;
+}
+
+.workspace-account-menu .workspace-logout-item[data-highlighted] svg,
+.workspace-account-menu .workspace-logout-item:hover svg,
+.workspace-account-menu .workspace-logout-item:focus-visible svg {
+  color: #b42318;
+}
+
 .workspace-mobile-menu {
   display: none;
+}
+
+.workspace-mobile-context {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.workspace-mobile-context [data-slot="sheet-description"] {
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.workspace-mobile-context .plan-tag {
+  flex-shrink: 0;
 }
 
 .demo-banner {
@@ -276,9 +312,9 @@
 .notification-item p,
 .notification-item a,
 .notification-item > div > span {
+  display: block;
   font-size: 11px;
   line-height: 1.7;
-  display: block;
   overflow-wrap: anywhere;
 }
 
@@ -326,12 +362,6 @@
 
 @media (max-width: 1000px) {
   .workspace-context {
-    display: flex;
-    gap: 8px;
-  }
-
-  .workspace-context > .business-name,
-  .workspace-divider {
     display: none;
   }
 
@@ -354,14 +384,6 @@
   .workspace-header .brand img {
     width: 31px;
     height: 31px;
-  }
-
-  .workspace-context {
-    gap: 0;
-  }
-
-  .workspace-context > .plan-tag {
-    font-size: 10px;
   }
 
   .workspace-header-actions {
@@ -398,6 +420,10 @@
   .profile-trigger > span {
     width: 30px;
     height: 30px;
+    font-size: 10px;
+  }
+
+  .workspace-mobile-context .plan-tag {
     font-size: 10px;
   }
 

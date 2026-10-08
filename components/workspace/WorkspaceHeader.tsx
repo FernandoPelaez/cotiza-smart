@@ -1,10 +1,11 @@
 "use client";
+
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   Menu,
   Plus,
-  LogOut,
+  DoorOpen,
   UserRound,
   Settings2,
   RotateCcw,
@@ -31,6 +32,7 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { toast } from "@/lib/services/feedback";
+
 export const WORKSPACE_NAV = [
   { href: "", label: "Inicio" },
   { href: "/cotizaciones", label: "Cotizaciones" },
@@ -39,41 +41,53 @@ export const WORKSPACE_NAV = [
   { href: "/planes", label: "Planes" },
   { href: "/configuracion", label: "Configuración" },
 ];
+
 export function WorkspaceHeader({ section }: { section: string }) {
   const { workspace, base, resetDemo, demoOnboarding, setLimitOpen } =
     useWorkspace();
+
   const router = useRouter();
   const plan = effectivePlan(workspace.subscription);
+  const planLabel =
+    plan === "free" ? "Free" : plan === "pro" ? "Pro" : "Premium";
+  const businessName = workspace.business?.name ?? "Tu negocio";
+
   const create = () => {
-    if (!canCreate(workspace.subscription, workspace.creations_used))
+    if (!canCreate(workspace.subscription, workspace.creations_used)) {
       setLimitOpen(true);
-    else router.push(`${base}/nueva`);
+      return;
+    }
+
+    router.push(`${base}/nueva`);
   };
+
   async function logout() {
     try {
       if (workspace.mode === "live") {
         const { error } = await browserSupabase().auth.signOut();
         if (error) throw error;
       }
+
       router.push("/");
       router.refresh();
     } catch {
       toast.error("No pudimos cerrar la sesión. Intenta de nuevo.");
     }
   }
+
   return (
     <header className="workspace-header">
       <div className="container-main workspace-top">
         <Brand href={base} />
+
         <div className="workspace-context">
           <span className="workspace-divider" />
-          <span className="business-name" title={workspace.business?.name}>
-            {workspace.business?.name ?? "Tu negocio"}
+          <span className="business-name" title={businessName}>
+            {businessName}
           </span>
-          <span className={`plan-tag plan-${plan}`}>
-            {plan === "free" ? "Free" : plan === "pro" ? "Pro" : "Premium"}
-          </span>
+          <span className={`plan-tag plan-${plan}`}>{planLabel}</span>
         </div>
+
         <div className="workspace-header-actions">
           <button
             className="btn btn-primary btn-sm"
@@ -91,7 +105,9 @@ export function WorkspaceHeader({ section }: { section: string }) {
                 : "Ampliar mi plan"}
             </span>
           </button>
+
           <NotificationCenter />
+
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button
@@ -102,26 +118,34 @@ export function WorkspaceHeader({ section }: { section: string }) {
                 <ChevronDown size={13} />
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="min-w-60">
+
+            <DropdownMenuContent
+              align="end"
+              className="workspace-account-menu min-w-60"
+            >
               <div className="px-3 py-3">
                 <p className="text-sm font-semibold">{workspace.user.name}</p>
                 <p className="text-xs text-muted-foreground mt-1">
                   {workspace.user.email}
                 </p>
               </div>
+
               <DropdownMenuSeparator />
+
               <DropdownMenuItem asChild>
                 <Link href={`${base}/configuracion`}>
                   <UserRound size={15} />
                   Mi perfil y negocio
                 </Link>
               </DropdownMenuItem>
+
               <DropdownMenuItem asChild>
                 <Link href={`${base}/planes`}>
                   <Settings2 size={15} />
                   Mi suscripción
                 </Link>
               </DropdownMenuItem>
+
               {workspace.mode === "demo" && (
                 <DropdownMenuItem
                   onClick={() => {
@@ -134,21 +158,28 @@ export function WorkspaceHeader({ section }: { section: string }) {
                   Reiniciar demostración
                 </DropdownMenuItem>
               )}
+
               {workspace.mode === "demo" && (
                 <DropdownMenuItem onClick={demoOnboarding}>
                   <Settings2 size={15} />
                   Probar configuración inicial
                 </DropdownMenuItem>
               )}
+
               <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={logout}>
-                <LogOut size={15} />
+
+              <DropdownMenuItem
+                onClick={logout}
+                className="workspace-logout-item"
+              >
+                <DoorOpen size={15} />
                 {workspace.mode === "demo"
                   ? "Salir de la demo"
                   : "Cerrar sesión"}
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
+
           <Sheet>
             <SheetTrigger asChild>
               <button
@@ -158,11 +189,15 @@ export function WorkspaceHeader({ section }: { section: string }) {
                 <Menu size={19} />
               </button>
             </SheetTrigger>
+
             <SheetContent>
               <SheetTitle className="mt-7 px-6">Tu espacio</SheetTitle>
-              <SheetDescription className="px-6">
-                {workspace.business?.name ?? "Cotiza Smart"}
-              </SheetDescription>
+
+              <div className="workspace-mobile-context px-6">
+                <SheetDescription>{businessName}</SheetDescription>
+                <span className={`plan-tag plan-${plan}`}>{planLabel}</span>
+              </div>
+
               <nav
                 className="flex flex-col gap-4 p-6 mt-3"
                 aria-label="Navegación móvil"
@@ -171,7 +206,11 @@ export function WorkspaceHeader({ section }: { section: string }) {
                   <SheetClose asChild key={nav.label}>
                     <Link
                       href={`${base}${nav.href}`}
-                      className={`py-2 ${section === nav.href ? "text-primary font-bold" : "text-muted-foreground"}`}
+                      className={`py-2 ${
+                        section === nav.href
+                          ? "text-primary font-bold"
+                          : "text-muted-foreground"
+                      }`}
                     >
                       {nav.label}
                     </Link>
@@ -182,6 +221,7 @@ export function WorkspaceHeader({ section }: { section: string }) {
           </Sheet>
         </div>
       </div>
+
       <nav
         className="container-main workspace-nav"
         aria-label="Navegación del área de trabajo"
