@@ -102,26 +102,35 @@
   min-height: 43px;
 }
 
-.business-form-actions {
+.business-form-actions,
+.profile-form-actions {
   display: flex;
-  gap: 12px;
-  justify-content: space-between;
   align-items: center;
+  gap: 12px;
   margin-top: 25px;
 }
 
-.business-form-actions .btn {
+.business-form-actions {
+  justify-content: space-between;
+}
+
+.business-form-actions .btn,
+.profile-form-actions .btn {
+  width: auto;
   font-size: 12px;
 }
 
-.business-cancel-button {
+.business-cancel-button,
+.profile-cancel-button {
   transition:
     color 160ms ease,
     background-color 160ms ease;
 }
 
 .business-cancel-button:not(:disabled):hover,
-.business-cancel-button:not(:disabled):focus-visible {
+.business-cancel-button:not(:disabled):focus-visible,
+.profile-cancel-button:not(:disabled):hover,
+.profile-cancel-button:not(:disabled):focus-visible {
   color: #b42318;
   background: #fef3f2;
 }
@@ -386,7 +395,8 @@
     grid-template-columns: 0.7fr 1.3fr;
   }
 
-  .business-form {
+  .business-form,
+  .profile-form {
     padding: 22px;
   }
 }
@@ -402,16 +412,19 @@
     margin-bottom: 8px;
   }
 
-  .business-form {
+  .business-form,
+  .profile-form {
     padding: 20px;
   }
 
-  .business-form-actions {
+  .business-form-actions,
+  .profile-form-actions {
     gap: 8px;
     flex-wrap: wrap;
   }
 
-  .business-form-actions .btn {
+  .business-form-actions .btn,
+  .profile-form-actions .btn {
     width: auto;
     min-width: 0;
     min-height: 38px;
@@ -464,11 +477,13 @@
 }
 
 @media (max-width: 560px) {
-  .business-form-actions {
+  .business-form-actions,
+  .profile-form-actions {
     gap: 6px 8px;
   }
 
-  .business-form-actions .btn {
+  .business-form-actions .btn,
+  .profile-form-actions .btn {
     min-height: 36px;
     padding: 8px 10px;
     font-size: 11px;
