@@ -106,11 +106,24 @@
   display: flex;
   gap: 12px;
   justify-content: space-between;
+  align-items: center;
   margin-top: 25px;
 }
 
 .business-form-actions .btn {
   font-size: 12px;
+}
+
+.business-cancel-button {
+  transition:
+    color 160ms ease,
+    background-color 160ms ease;
+}
+
+.business-cancel-button:not(:disabled):hover,
+.business-cancel-button:not(:disabled):focus-visible {
+  color: #b42318;
+  background: #fef3f2;
 }
 
 .activity-picker {
@@ -393,6 +406,20 @@
     padding: 20px;
   }
 
+  .business-form-actions {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .business-form-actions .btn {
+    width: auto;
+    min-width: 0;
+    min-height: 38px;
+    padding: 9px 12px;
+    font-size: 11px;
+    flex: 0 0 auto;
+  }
+
   .activity-options {
     gap: 8px !important;
   }
@@ -437,6 +464,16 @@
 }
 
 @media (max-width: 560px) {
+  .business-form-actions {
+    gap: 6px 8px;
+  }
+
+  .business-form-actions .btn {
+    min-height: 36px;
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+
   .upgrade-options {
     grid-template-columns: 1fr;
   }
